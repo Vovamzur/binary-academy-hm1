@@ -1,0 +1,135 @@
+@media (max-width: 937px) {
+  .content {
+    grid-template-areas: 
+        "header"
+        "author-aside"
+        "main"
+        "navigation-aside"
+        "footer";
+    grid-template-columns: 100%;
+  }
+
+  header {
+    flex-wrap: wrap;
+  }
+
+  header .logo {
+    width: 100vw;
+    height: calc(100% - 45px);
+    min-height: 50px;
+    position: relative;
+    top: 45px;
+    text-align: center;
+  }
+
+  header .social-nav {
+    visibility: hidden;
+  }
+
+  #srch-ico {
+    visibility: visible;
+    position: absolute;
+    height: 32px;
+    top: 15px;
+    right: 15px;
+    margin: 0;
+  }
+
+  #menu-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 3;
+    -webkit-user-select: none;
+    user-select: none; 
+  }
+
+  #menu-toggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2; 
+   -webkit-touch-callout: none;
+  }
+
+  #menu-toggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #0f0d0e;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+                background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+                opacity 0.55s ease;
+  }
+
+  #menu-toggle span:first-child {
+    transform-origin: 0% 0%;
+  }
+
+  #menu-toggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+  }
+
+  #menu-toggle input:checked ~ span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+  }
+
+  #menu-toggle input:checked ~ span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+
+  #menu-toggle input:checked ~ span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+
+  .menu {
+    position: fixed;
+    top: -1rem;
+    left: -20rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    width: 12.7rem;
+    height: 100vh;
+    padding: 4rem;
+    padding-top: 7rem;
+   
+    background: var(--color7);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+    -webkit-font-smoothing: antialiased;
+    transform: none;   
+  }
+
+  .menu li {
+    margin: 0.5rem;
+    color: var(--color4);
+  }
+
+  #menu-toggle input:checked ~ ul {
+     transform-origin: 0% 0%;
+     transform: translate(150%, 0);
+     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+  }
+
+  aside section {
+    width: 90%;
+    margin: 20px auto;
+    max-width: 800px;
+  }
+
+  footer .logo img {
+    height: 60px;
+  }
+}
